@@ -1,16 +1,19 @@
 #header_box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
   width: 100%;
   height: 45px;
   min-width: 1320px;
-  // background-color: #0e173d;
-  background-color: #ffffff;
+  background-color: rgba(255,255,255,0.9);
   overflow: hidden;
   .header_main{
     display: flex;
     align-items: center;
     width: 100%;
     height: 100%;
-    max-width: 1320px;
+    max-width: 1200px;
     margin: 0 auto;
     .logo_box {
       width: 35px;
