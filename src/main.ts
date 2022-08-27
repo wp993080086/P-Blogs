@@ -6,6 +6,7 @@ import { registerStore } from '@/store'
 import ElementPlus from 'element-plus'
 import zhCn from 'element-plus/lib/locale/lang/zh-cn'
 import '@/static/styles/reset.css'
+import '@/static/styles/font-icon.css'
 
 const app = createApp(App)
 app.use(router)

@@ -15,7 +15,7 @@ export default [
   {
     path: '/home',
     name: 'Home',
-    component: () => import('@/pages/home/index'),
+    component: () => import('@/pages/home/index.vue'),
     meta: {
       title: '个人主页',
       showHeader: true

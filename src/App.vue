@@ -1,22 +1,30 @@
 <script setup lang="ts">
-import Header from '@/components/header/header'
+import { ref } from 'vue'
+import Header from '@/components/header/index.vue'
+
+const top = ref(0)
+const handleScrollFn = (ev: TAnyType) => {
+  top.value = ev.scrollTop
+}
 </script>
 
 <template>
-  <div id="main_box">
-    <Header />
-    <router-view v-slot="{ Component }">
-      <transition name="fade" mode="out-in">
-        <component :is="Component" />
-      </transition>
-    </router-view>
-  </div>
+  <el-scrollbar @scroll="handleScrollFn">
+    <div id="main_box">
+      <Header :top="top" />
+      <router-view v-slot="{ Component }">
+        <transition name="fade" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
+    </div>
+  </el-scrollbar>
 </template>
 
 <style lang="scss" scoped>
 #main_box {
-  position: relative;
   width: 100%;
+  height: 100%;
 }
 </style>
 

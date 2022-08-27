@@ -3,41 +3,12 @@ body,
 #app {
   font-family: 'PingFangSC-Medium', 'PingFang SC', 'Helvetica', 'PingFang SC', 'Helvetica Neue',
     Arial, 'Hiragino Sans GB', 'Heiti SC', 'WenQuanYi Micro Hei', sans-serif;
-  /* background-color: #f1f1f1; */
+  background-color: #f1f1f1;
   line-height: 1.5;
-}
-html {
-  overflow-y: scroll;
-}
-
-:root {
-  overflow-y: auto;
-  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
 }
 
-:root body {
-  position: absolute;
-}
-
-body {
-  width: 100vw;
-  overflow: hidden;
-}
-
-/* 滚动条整体 w是y轴 h是x轴 */
-*::-webkit-scrollbar {
-  width: 6px;
-  height: 0;
-}
-/* 滚动条里的滑块 */
-*::-webkit-scrollbar-thumb {
-  border-radius: 3px;
-  background-color: #ced0d4;
-}
-/* 滚动条的轨道 */
-*::-webkit-scrollbar-track {
-  background-color: transparent;
-}
 /* reset */
 html,
 body,
