@@ -59,7 +59,7 @@ export const sleep = (ms = 500) => {
  * @param {Function} fn 事件
  * @param {Number} limit 触发间隔
  */
-export const throttle = <F extends TAnyFunc>(fn: F, limit = 200): IThrottleFunction<F> => {
+export const throttle = <F extends TFunc>(fn: F, limit = 200): IThrottleFunction<F> => {
   let wait = false
   return function (this: void, ...args: Parameters<F>) {
     if (wait === false) {
@@ -78,7 +78,7 @@ export const throttle = <F extends TAnyFunc>(fn: F, limit = 200): IThrottleFunct
  * @param {Function} fn 事件
  * @param {Number} immediate 是否立即触发一次
  */
-export const debounce = <F extends TAnyFunc>(
+export const debounce = <F extends TFunc>(
   wait: number,
   fn: F,
   immediate = false
@@ -123,7 +123,7 @@ export const createUuid = (prefix = 'pdd') => {
  */
 export const setStorage = (
   key: string,
-  data: string | number | TAnyArray | TAnyType,
+  data: string | number | TAnyArray | Array<TAny>,
   type: 'session' | 'local' = 'session'
 ) => {
   const env = process.env.NODE_ENV as string

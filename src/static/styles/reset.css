@@ -3,14 +3,13 @@ body,
 #app {
   font-family: 'PingFangSC-Medium', 'PingFang SC', 'Helvetica', 'PingFang SC', 'Helvetica Neue',
     Arial, 'Hiragino Sans GB', 'Heiti SC', 'WenQuanYi Micro Hei', sans-serif;
-  background-color: #f1f1f1;
+  background-color: var(--pdd-bg-color-white);
   line-height: 1.5;
-  width: 100%;
-  height: 100%;
 }
-
+body, #app{
+  width: 100%;
+}
 /* reset */
-html,
 body,
 ul,
 li,

@@ -1,3 +1,43 @@
+<template>
+  <transition name="fade" mode="out-in">
+    <div v-if="isShow" id="header_box">
+      <div id="header_box_pc">
+        <div class="header_main">
+          <div class="name_box">鹏多多</div>
+          <div class="menu_box">
+            <template v-for="item in menuList" :key="item.id">
+              <div class="menu_item">
+                <i :class="item.icon"></i>
+                <span class="menu_item_title">{{ item.title }}</span>
+                <div class="menu_item_line"></div>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+      <div id="header_box_h5">
+        <div class="header_main">
+          <div class="name_box">鹏多多</div>
+          <div class="menu_box" @click="fn">
+            <i class="iconfont pdd-menu"></i>
+          </div>
+          <transition name="fade" mode="out-in">
+            <div v-if="showMenu" class="menu_main">
+              <template v-for="item in menuList" :key="item.id">
+                <div class="menu_item">
+                  <i :class="item.icon"></i>
+                  <span class="menu_item_title">{{ item.title }}</span>
+                  <div class="menu_item_line"></div>
+                </div>
+              </template>
+            </div>
+          </transition>
+        </div>
+      </div>
+    </div>
+  </transition>
+</template>
+
 <script setup lang="ts">
 import { reactive, watch, ref } from 'vue'
 
@@ -31,46 +71,6 @@ const fn = () => {
   showMenu.value = !showMenu.value
 }
 </script>
-
-<template>
-  <transition name="fade" mode="out-in">
-    <div id="header_box" v-if="isShow">
-      <div id="header_box_pc">
-        <div class="header_main">
-          <div class="name_box">鹏多多</div>
-          <div class="menu_box">
-            <template v-for="item in menuList" :key="item.id">
-              <div class="menu_item">
-                <i :class="item.icon"></i>
-                <span class="menu_item_title">{{ item.title }}</span>
-                <div class="menu_item_line"></div>
-              </div>
-            </template>
-          </div>
-        </div>
-      </div>
-      <div id="header_box_h5">
-        <div class="header_main">
-          <div class="name_box">鹏多多</div>
-          <div class="menu_box" @click="fn">
-            <i class="iconfont pdd-menu"></i>
-          </div>
-          <transition name="fade" mode="out-in">
-            <div class="menu_main" v-if="showMenu">
-              <template v-for="item in menuList" :key="item.id">
-                <div class="menu_item">
-                  <i :class="item.icon"></i>
-                  <span class="menu_item_title">{{ item.title }}</span>
-                  <div class="menu_item_line"></div>
-                </div>
-              </template>
-            </div>
-          </transition>
-        </div>
-      </div>
-    </div>
-  </transition>
-</template>
 
 <style lang="scss" scoped>
 #header_box {

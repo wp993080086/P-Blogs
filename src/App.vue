@@ -1,25 +1,28 @@
+<template>
+  <div id="main_box" @scroll="handleScrollFn">
+    <Header :top="top" />
+    <router-view v-slot="{ Component }">
+      <transition name="fade_enter" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
+  </div>
+</template>
+
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import Header from '@/components/header/index.vue'
 
 const top = ref(0)
-const handleScrollFn = (ev: TAnyType) => {
+const handleScrollFn = (ev: TDict) => {
   top.value = ev.scrollTop
 }
+onMounted(() => {
+  window.onresize = () => {
+    console.log(document.documentElement.scrollTop)
+  }
+})
 </script>
-
-<template>
-  <el-scrollbar @scroll="handleScrollFn">
-    <div id="main_box">
-      <Header :top="top" />
-      <router-view v-slot="{ Component }">
-        <transition name="fade" mode="out-in">
-          <component :is="Component" />
-        </transition>
-      </router-view>
-    </div>
-  </el-scrollbar>
-</template>
 
 <style lang="scss" scoped>
 #main_box {
@@ -27,14 +30,8 @@ const handleScrollFn = (ev: TAnyType) => {
   height: 100%;
 }
 </style>
-
-<style>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
+<style lang="scss">
+html {
+  width: 100%;
 }
 </style>

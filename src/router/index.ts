@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import NProgress from 'nprogress'
-import base from './routers/base'
+import base from './routers'
 
 const routes: Array<RouteRecordRaw> = [...base]
 

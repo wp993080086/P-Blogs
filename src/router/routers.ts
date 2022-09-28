@@ -8,35 +8,31 @@ export default [
     name: 'NotFound',
     component: () => import('@/pages/not-found/index'),
     meta: {
-      title: 'NotFound',
-      showHeader: false
+      title: 'notFound'
     }
   },
   {
     path: '/home',
-    name: 'Home',
+    name: 'home',
     component: () => import('@/pages/home/index.vue'),
     meta: {
-      title: '个人主页',
-      showHeader: true
+      title: '个人主页'
     }
   },
   {
     path: '/skill',
-    name: 'Skill',
+    name: 'skill',
     component: () => import('@/pages/skill/index'),
     meta: {
-      title: '技术文档',
-      showHeader: true
+      title: '轮子收录'
     }
   },
   {
     path: '/article',
-    name: 'Article',
+    name: 'article',
     component: () => import('@/pages/article/index'),
     meta: {
-      title: '文章合集',
-      showHeader: true
+      title: '文章合集'
     }
   }
 ]
