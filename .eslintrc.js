@@ -72,6 +72,7 @@ module.exports = {
     'linebreak-style': [0, 'error', 'windows'],
     'no-shadow': 'off', // 注意你必须禁用基本规则，因为它可以报告不正确的错误
     '@typescript-eslint/no-shadow': ['error'],
+    '@typescript-eslint/no-non-null-assertion': [0],
     '@typescript-eslint/member-delimiter-style': [
       'error',
       {
@@ -83,7 +84,7 @@ module.exports = {
           delimiter: 'semi',
           requireLast: false,
         },
-      },
+      }
     ],
     'keyword-spacing': [
       2,

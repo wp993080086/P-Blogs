@@ -74,13 +74,13 @@ export const throttle = <F extends TFunc>(fn: F, limit = 200): IThrottleFunction
 }
 /**
  * 防抖
- * @param {Number} wait 触发间隔
  * @param {Function} fn 事件
+ * @param {Number} wait 触发间隔
  * @param {Number} immediate 是否立即触发一次
  */
 export const debounce = <F extends TFunc>(
-  wait: number,
   fn: F,
+  wait: number,
   immediate = false
 ): IDebounceFunction<F> => {
   let timeout: NodeJS.Timeout
@@ -123,7 +123,7 @@ export const createUuid = (prefix = 'pdd') => {
  */
 export const setStorage = (
   key: string,
-  data: string | number | TAnyArray | Array<TAny>,
+  data: string | number | Array<TAny>,
   type: 'session' | 'local' = 'session'
 ) => {
   const env = process.env.NODE_ENV as string

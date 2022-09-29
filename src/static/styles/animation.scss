@@ -66,7 +66,7 @@
   }
 }
 .slide_left-enter-active {
-  animation: slideInLeft 0.5s;
+  animation: slideInLeft 0.3s;
   animation-timing-function: ease-out;
 }
 /**
@@ -83,7 +83,7 @@
   }
 }
 .slide_right-enter-active {
-  animation: slideInRight 0.5s;
+  animation: slideInRight 0.3s;
   animation-timing-function: ease-out;
 }
 /**
@@ -151,7 +151,7 @@
   animation-timing-function: ease-out;
 }
 /**
-* 淡入淡出
+* 淡入
 */
 @keyframes fadeTo {
   from {
